@@ -1,14 +1,15 @@
 <?php
 
 class Person {
-	private $name;
 	private $age;
+	private $name;
 
-	public function __construct(string $name, int $age) {
+
+	public function __construct(string $newName, int $newAge) {
 		try {
-			$this->setName($newName);
 			$this->setAge($newAge);
-		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$this->setName($newName);
+					} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
 			$exceptionType = get_class($exception);
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
@@ -67,6 +68,7 @@ class Person {
 	}
 	public function __toString() {
 		// TODO: Implement __toString() method.
+		return $this->name;
 	}
 }
 
