@@ -30,7 +30,7 @@ class Person {
 		$newName = trim($newName);
 		$newName = filter_var($newName, FILTER_SANITIZE_URL);
 		if(empty($newName) === true) {
-			throw(new \InvalidArgumentException("Name is empty or insecure. "));
+			throw(new \InvalidArgumentException("Name is empty or insecure."));
 		}
 
 		// verify the name will fit in the database
@@ -53,19 +53,20 @@ class Person {
 
 	public function setAge( int $newAge): int {
 		$this->age = $newAge;
-
 		//verifys that the age is a positive number
 		if($newAge < 0) {
 			throw (new \RangeException("Age cannot be less than zero"));
-		} else($newAge > 0 and <=18) {
-			return ("hello caleb")
-		}elseif ($newAge > 118){
-			return ("hi deepdivedylan")
+		}if($newAge > 0 and $newAge<=18){
+			return ("hello caleb");
+		}if ($newAge > 118){
+			return ("hi deepdivedylan");
 		}
 
 		//store the value if it passes validation
 		$this->age = $newAge;
 	}
-
-
+	public function __toString() {
+		// TODO: Implement __toString() method.
+	}
 }
+
