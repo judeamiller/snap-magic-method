@@ -57,10 +57,10 @@ class Person {
 		//verifys that the age is a positive number
 		if($newAge < 0) {
 			throw (new \RangeException("Age cannot be less than zero"));
-		}if($newAge > 0 and $newAge<=18){
-			return ("hello caleb");
+		}if($newAge >= 0 and $newAge<=18){
+			echo ("hello caleb");
 		}if ($newAge > 118){
-			return ("hi deepdivedylan");
+			echo ("hi deepdivedylan");
 		}
 
 		//store the value if it passes validation
