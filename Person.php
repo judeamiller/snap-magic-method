@@ -68,7 +68,10 @@ class Person {
 	}
 	public function __toString() {
 		// TODO: Implement __toString() method.
-		return $this->name;
+		return "<tr><td>" . $this->name . "</td><td>" . $this->age ."</td></tr>";
 	}
 }
+
+$newPerson = new Person("Arlo", 22);
+
 
